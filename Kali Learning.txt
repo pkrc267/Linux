@@ -1,0 +1,31 @@
+Just started with the Kali linux network scanning cookbook.
+Making a lab with metasploitable2 and Kali Linux virtual machines. Hosted on windows 10.
+Installed PuTTY for ssh in the windows.
+installed openssh-server in both the vms.
+Set the kali linux VM network setting from NAT to Bridge network on the wifi device.
+Now finally able to connect to the KALI VM via SSH in PuTTy using the ip-address of the target machine.
+Putty is working with ssh and connection has been established.
+* putty suddenly hanged.
+* restarted putty but not able to login.
+* putty says:- PuTTY Fatal Error. Netwrok Error: No route to host.
+-restarting kali vm using "init 6" to again try for ssh connection
+-problem solved.
+- don't leave ssh as it is when not using it. always terminate the process using "exit" command, so that next time it doesn't give any error.
+connecting to kali vm via putty ssh.
+connection established.
+running ssh.
+downloading nessus. got the key in the mail.
+nessus installed.
+accessing it using windows system in chrome browser via https://<kali vm ip address>:8834
+nessus downloaded and loading.
+nessus userid: root password: toor
+nessus accessible.
+
+now moving on to BURPSUIT.
+opening the burpsuit in the default configuration.
+feeded the proxy address 127.0.0.1 and port as 8080.
+then configuring the web browser to use manual proxy for all protocols. the manual proxy 127.0.0.1 port 8080.
+now all the requested sites will be relayed through the burpsuit and nothing will be rendered on the browser.
+exiting the web browser.
+shutting the system now.
+this marks the end of hands-on practice for chapter 1 of the Kali Linux Network Scanning Cookbook.
