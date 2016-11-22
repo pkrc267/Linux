@@ -1,4 +1,7 @@
 Just started with the Kali linux network scanning cookbook.
+
+$ CHAPTER 1
+
 Making a lab with metasploitable2 and Kali Linux virtual machines. Hosted on windows 10.
 Installed PuTTY for ssh in the windows.
 installed openssh-server in both the vms.
@@ -29,3 +32,5 @@ now all the requested sites will be relayed through the burpsuit and nothing wil
 exiting the web browser.
 shutting the system now.
 this marks the end of hands-on practice for chapter 1 of the Kali Linux Network Scanning Cookbook.
+
+$ CHAPTER 2
