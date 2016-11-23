@@ -1,0 +1,83 @@
+UNIT 4 : Working with text files
+
+4.1 Regular Expressions.
+________________________
+use of regex, i.e. regular expressions. use man page : man 7 regex
+use of ^  $  |  .   []  ()  {}  *  +  ?
+seems similar to globbing, but is different.
+regular expressions can be used to with the contents of the files, unlike globbing.
+
+4.2 Using Text tools.
+_______________________
+using commands:
+cat : useful to view contents of a file.
+less : useful if the file contents are larger than a page. Shows content in scrollable manner.
+	use of backslash '/' followed by any string can help in searching the string.
+	eg: /text , will search for all the occurances of string 'text'.
+head : displays first 10 lines of any file.
+tail : displays last 10 lines of any file.
+	
+	NOTE: head and tail can be used with '-n' followed by number of lines to display.
+	eg: head -n 10 RHCSA.txt
+
+tr: can be used for translation or transformation of the text.
+    mostly used with echo command.
+    eg: echo hello | tr [:lower:] [:upper:]
+      > HELLO
+      thus this command translated the lower case string to upper case string.
+
+cut : used to filter out the content of the file for displaying.
+     #didn't understand it much.
+     eg: cut -f 1 -d : /etc/passwd
+     -f 1, causes first column to cut out. by default the columnt delimiter is a TAB.
+     -d :, causes to set custom delimiter. we have set the delimiter as :.
+
+sort : sorts the display content according to ASCII values.
+	hence, numbers, then capital alphabets, small alphabets, etc.
+	to sort according to numbers use -n
+	eg: sort -n /'filename'
+
+
+4.3 Working with grep.
+________________________
+filtering/searching utility.
+
+grep can be used to find the occurances of any text in complete tree structure.
+eg: in the etc folder try
+    grep -iR lisa * 2> /dev/null
+
+    -i :stands for ignore case
+    -R :stands for recursive or exhaustive scanning of the text, in any kind of file that is present in /etc.
+        this will include all the binary files also.
+
+    to avoid results of Binary files, pipe the output through another grep that avoids the Binary files:
+
+    grep -iR lisa * 2> /dev/null | grep -v Binary
+
+    -v : used for avoiding perticular output or presence.
+
+
+4.4  sed  and  awk  basics
+___________________________
+
+historical tools.
+while working blindfold.
+
+eg: 
+	sed -n /^root/p /etc/passwd
+its easier replacemnt can be using grep:
+	grep '^root' /etc/passwd
+we just used regular expression in the command. the '^root' will output all the lines that start with "root".
+
+sed is a stream editor for filtering and transforming text.
+use man pages for furthur detail.
+man sed
+
+using awk. use it as a replacement for cut command.
+awk is much more smarter than cut.
+
+eg :
+	ps aux | grep apache | cut -f 2
+in this command, cut fails to recognize the second column. thus,
+	ps aux | grep apache | awk '{ print $2 }'
+through this, the second column of the grep output will be filtered and displayed.
