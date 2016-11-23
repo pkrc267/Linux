@@ -1,3 +1,6 @@
+====================================================================================================
+====================================================================================================
+
 UNIT 4 : Working with text files
 
 4.1 Regular Expressions.
@@ -81,3 +84,26 @@ eg :
 in this command, cut fails to recognize the second column. thus,
 	ps aux | grep apache | awk '{ print $2 }'
 through this, the second column of the grep output will be filtered and displayed.
+
+=================================================================================================================
+=================================================================================================================
+
+UNIT 5 : CONNECTING TO RHEL SERVER
+
+5.1 Open the terminal
+5.2 Connect using SSH
+_____________________
+if in a network, connect to the server via ssh using the ip address of the server and the user name, like :
+	
+	ssh root@10.0.2.15
+
+	NOTE: check the /etc/ssh/sshd_config file for ssh configuration.
+	      most of the time root login is turned off for securing the server. you can change that.
+
+try ssh-keygen.
+
+==================================================================================================================
+==================================================================================================================
+UNIT 6 : MANAGING USERS AND USER GROUPS
+
+
