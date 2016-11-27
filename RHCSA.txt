@@ -106,4 +106,88 @@ try ssh-keygen.
 ==================================================================================================================
 UNIT 6 : MANAGING USERS AND USER GROUPS
 
+6.1 User and Groups
+6.2 User accounts
+__________________
 
+Note: in primary accounts, there is one user in one group.
+
+6.3 Managing User Accounts
+___________________________
+
+ try:
+ 	man useradd
+using the following commands:
+	useradd -c CShellUser -e 2017-01-01 -s /bin/tcsh laura
+	passwd laura
+	<now enter the password. i entered the username laura as password.>
+
+-c : used to enter comments. the comments will be made as GECOS entry for that user.
+-e : sets the expiration time of that user. format YYYY-MM-DD.
+-s : specifies the shell that user will be associated with. in this case the user is using tcsh.
+
+to see all the users is made:
+	tail /etc/passwd
+this lists all the users and its related details.
+to see if the account works, i.e. if the login is allowed with the user or not.
+	tail /etc/shadow
+
+if the password is not set, the entry will be like: laura:!!:...........
+the !! shows that no password is set and the user is not allowed ye to login.
+
+6.4 Understanding Group Membership
+___________________________________
+by default redhat uses private members, i.e. having primary accounts.
+use id command for having details of user and its group.
+
+all the groups are mentioned in /etc/group
+
+6.5 Creating and Managing Groups
+_________________________________
+use groupadd --help
+
+users can be added to a group in two ways,
+->by editing and adding the username in the /etc/group file entry of the group.
+->by using usermod command.
+	
+	> groupadd accounts
+	> usermod -aG accounts laura
+
+  -aG : append to group
+
+6.6 User and Group Configuration files
+_______________________________________
+
+  /etc/login.defs	: contains the default configurations of a user account.
+  /etc/defaults/useradd : contains default values of various configurations when a user is made.
+  /etc/skel		: acts as default structure when a new user is made. contains files and folders
+  			  that are copied to new user home directory.
+
+6.7 Managing Password Properties
+________________________________
+
+to manage passwords of users, you must be a root user.
+the commands used are:
+	passwd --help
+UNIT 7 :  
+both of them gives details and options to work on passwords.
+try:
+	chage -l <username>
+
+	this will display the details of the user account.
+
+locking, unlocking and epiration of password:
+	passwd -l lisa
+		this locks the password for lisa account.
+	passwd -u lisa
+		this unlocks the password for lisa account.
+	passwd -e lisa
+		this will cause instant expiration of password, and user will be prompted for changing the password
+		the next time he logs in.
+ 
+ performed the exercise of lesson 6 and now moving on.
+
+=====================================================================================================================
+=====================================================================================================================
+
+UNIT 7 : CONNECTING TO LDAP SERVER
