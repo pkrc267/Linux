@@ -1,4 +1,4 @@
-# kali
+# Kali Learning
 These are the notes on hands-on practice for Kali Linux Network Scanning Cookbook.<br>
 The book is amazing and helps in understanding the concept by making you perform the operations.<br>
 But be warned! This book does not teaches "Hacking".<br>
@@ -9,3 +9,9 @@ Apparatus:<br>
 -Metasploit2 image<br>
 -Windows XP image (optional)<br>
 -Virtualization software such as VirtualBox or VM Ware.<br>
+<br>
+# RHCSA
+Notes of Red Hat Certified System Administrator course.<br>
+<br>
+Apparatus:<br>
+-CentOS Virtual Machine.<br>
