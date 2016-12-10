@@ -191,3 +191,21 @@ locking, unlocking and epiration of password:
 =====================================================================================================================
 
 UNIT 7 : CONNECTING TO LDAP SERVER
+
+*Lightweight Directory Access Protocol*
+
+7.1 Understanding LDAP
+______________________
+
+
+	>which login	:shows the full path of login command, i.e. /bin/login
+	>ldd /bin/login	:shows all the shared libraries required by a command.
+
+
+
+now we can see the pam library (libpam) which is like a plugin to the login command, and adds some functionality to login command.
+its a pluggable authentication module.
+the authentication module is listed present in /etc/pam.d direstory.
+it contains configuration files for the different processes that relate to authentication.
+
+
